@@ -14,3 +14,4 @@
 - JupyterLab
 - MobaXterm / Ubuntu
 - MySQL, DBeaver
+- eclipse
