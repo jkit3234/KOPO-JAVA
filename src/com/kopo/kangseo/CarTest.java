@@ -1,17 +1,25 @@
 package com.kopo.kangseo;
 
-//2단계 : 인터페이스 + 다형성(핵심)
-//2-1. 인터페이스 작성
-interface Moveable {
-void move();
-}
-
 // 1단계 : 기본설계(필수)
  // 1. 추상클래스 작성
-abstract class car{
+abstract class Car {
  private String model;
- abstract void drive(){ System.out.println(model + "이다."); }
+ public Car(String model) {
+	 this.model = model;
+ }
+
+ public String getModel() {
+	 return name;
+ }
+ 
+ abstract void drive();
+ 
+ void introduce() {
+	 System.out.println(model + "이다."); 
+  }
 }
+
+interface 
 
 class Sedan extends
  @Override void drive() { System.out.println("부드럽게"); }
