@@ -1,0 +1,116 @@
+//package com.kopo.thread;
+//
+//class MyThread extends Thread{
+//	
+//	public void run() {
+//		System.out.println("123");
+//	}
+//	
+//}
+//public class ThreadEx1 {
+//
+//	public static void main(String[] args) {
+//		
+//		MyThread t = new MyThread();
+//		
+//		t.run(); // 잘못된 코드
+//		t.start();
+//		
+//		
+//
+//	}
+//
+//}
+
+
+//package com.kopo.thread;
+//
+//class MyThread extends Thread{
+//	
+//	public void run() {
+//		for(int i=0; i<10000; i++) {
+//			
+//			System.out.println(i);
+//		}
+//	}
+//	
+//}
+//
+//class MyThread2 extends Thread{
+//	
+//	public void run() {
+//		for(int i=10001; i<20000; i++) {
+//			
+//			System.out.println(i);
+//		}
+//	}
+//	
+//}
+//public class ThreadEx1 {
+//
+//	public static void main(String[] args) {
+//		
+//		MyThread t = new MyThread();
+//		MyThread t2 = new MyThread();
+//		
+//		t.start();
+//		t2.start();
+//		
+//		
+//
+//	}
+//
+//}
+
+
+
+
+package com.kopo.thread;
+
+import java.util.Random;
+
+class MyThread extends Thread{
+	
+	public void run() {
+		for( int i=0; i<Integer.MAX_VALUE; i++) {
+			
+			System.out.println(i);
+		}
+	}
+	
+}
+
+class MyThread2 extends Thread{
+	
+	public void run() {
+		Random rand = new Random();
+        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        for (;;) {
+            StringBuilder sb = new StringBuilder();
+
+            for (int j = 0; j < 5; j++) {
+                int idx = rand.nextInt(chars.length());
+                sb.append(chars.charAt(idx));
+            }
+
+            System.out.println(sb.toString());
+        }
+	}
+	
+}
+public class ThreadEx1 {
+
+	public static void main(String[] args) {
+		
+		MyThread t = new MyThread();
+		MyThread2 t2 = new MyThread2();
+		
+		t.start();
+		t2.start();
+		
+		
+
+	}
+
+}
